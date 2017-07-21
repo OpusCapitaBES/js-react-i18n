@@ -14,7 +14,8 @@
     "npm-build": "rimraf lib && babel --copy-files --no-babelrc --presets es2015,stage-0,react --plugins transform-decorators-legacy,lodash --ignore *.spec.js,*/demo/** src/client --out-dir lib",
     "npm-publish": "npm run npm-build && npm-publish",
     "publish-snapshot": "npm run npm-publish",
-    "publish-release": "npm run npm-publish -- --release"
+    "publish-release": "npm run npm-publish -- --release",
+    "upload-coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "contributors": [
     "Dmitry Divin <dmirty.divin@jcatalog.com>",
@@ -51,6 +52,7 @@
     "babel-preset-stage-0": "6.16.0",
     "babel-register": "6.18.0",
     "chai": "3.5.0",
+    "coveralls": "^2.13.1",
     "css-loader": "0.26.1",
     "enzyme": "2.6.0",
     "eslint": "3.12.2",
