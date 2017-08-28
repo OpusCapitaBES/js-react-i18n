@@ -26,11 +26,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "repository": "OpusCapitaBES/react-i18n",
+  "repository": "OpusCapita/react-i18n",
   "license": "Apache-2.0",
   "readme": "README.md",
   "dependencies": {
-    "@opuscapita/i18n": "1.0.14"
+    "@opuscapita/i18n": "1.0.14",
+    "@opuscapita/opuscapita-ui": "1.0.3-beta.2"
   },
   "peerDependencies": {
     "react": ">= 0.14.0 || >= 15.0.0",

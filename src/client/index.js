@@ -7,5 +7,5 @@ export {
   I18nManager, // todo: I think it's necessary to remove this export.
   I18nContext,
   FormattedMessage,
-  FormattedHTMLMessage,
+  FormattedHTMLMessage
 };

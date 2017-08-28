@@ -8,11 +8,11 @@
 
 # OpusCapita React i18n
 
-This is an extension for [React Intl](https://github.com/yahoo/react-intl) component.
+[i18n module](https://github.com/OpusCapita/i18n) extension for React applications that provides several components (tags) for rendering i18n messages.
 
 ## Assumptions
 
-Everything is stored in _i18n_ (instanse of IntlManager) object in scope of React context.
+Everything is stored in _i18n_ (I18nManager instance) object in scope of React context.
 
 ## Usage
 
@@ -35,7 +35,7 @@ class App extends React.Component {
 
   getChildContext() {
     return {
-        i18n: new IntlManager(this.props.locale)
+        i18n: new I18nManager(this.props.locale)
     };
   }
 
@@ -57,7 +57,7 @@ export default function(element, props) {
 
 ### Component
 
-Each component may register own messages in global _i18n_ using _register_ method of IntlManager.
+Each component may register own messages in global _i18n_ using _register_ method of I18nManager.
 
 ```javascript
 
@@ -74,7 +74,7 @@ class MyComponent extends React.Component {
   };
 
   getChildContext() {
-    const intlData = [{
+    const translations = [{
       locales : ['en-US'],
       messages: {
           logo: {
@@ -85,7 +85,7 @@ class MyComponent extends React.Component {
     }];
 
     return {
-        i18n: this.context.i18n.register('MyComponent', intlData)
+        i18n: this.context.i18n.register('MyComponent', translations)
     };
   }
 
@@ -104,7 +104,7 @@ class MyComponent extends React.Component {
 
 ## Development
 
-### Run code lint
+### Run code linting
 
 ```bash
 npm run lint
@@ -116,7 +116,7 @@ npm run lint
 npm test
 ```
 
-### Demo
+### Start demo
 
 ```bash
 npm start
