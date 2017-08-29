@@ -15,8 +15,8 @@ app.use(
   )
 );
 
-app.use('/opuscapita-ui',
-  express.static(path.join(__dirname, '../../../node_modules/@opuscapita/opuscapita-ui/dist/npm')));
+app.use('/styles',
+  express.static(path.join(__dirname, '../../../node_modules/@opuscapita/styles/dist/npm')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/demo/index.html'));
