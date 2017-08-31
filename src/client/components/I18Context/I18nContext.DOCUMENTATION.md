@@ -12,7 +12,7 @@ Now it **has no support** of `I18nManager.register()`. It should be implemented 
 | ------------------------------|:----------------------| -----------------------------------------------------------|
 | locale | string | Any string indentify locale. Examples: 'en', 'de'. It don't follow [BCP 47](https://tools.ietf.org/html/bcp47) or any another standart |
 | intlDatas | array | Array of `intlDatas`. Every item has shape `{ locales: [string], messages: object }` |
-| formatInfos | object | Example: `{ en: { datePattern: 'MM/dd/yyyy' }, ru: { datePattern: 'dd/MM/yyyy' } }` See description [here](https://github.com/OpusCapitaBES/js-i18n) |
+| formatInfos | object | Example: `{ en: { datePattern: 'MM/dd/yyyy' }, ru: { datePattern: 'dd/MM/yyyy' } }` See description [here](https://github.com/OpusCapita/i18n) |
 | defaultLocale | string | Fallback. If message not found try to find it at another locale |
 
 ### Code Example
