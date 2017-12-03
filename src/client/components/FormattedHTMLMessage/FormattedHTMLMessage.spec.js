@@ -39,10 +39,10 @@ class TestComponent extends React.Component {
 
 describe('FormattedHTMLMessage', () => {
   it('render translation', () => {
-    expect(render(<TestComponent message="logo"/>).html()).to.equal("<span>They shall not pass</span>");
+    expect(render(<TestComponent message="logo"/>).html()).to.equal("They shall not pass");
   });
 
   it('render nothing', () => {
-    expect(render(<TestComponent/>).html()).to.equal("<span></span>");
+    expect(render(<TestComponent/>).html()).to.equal("");
   });
 });
