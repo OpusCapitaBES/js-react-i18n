@@ -1,4 +1,24 @@
 
+Release 1.0.9 Sun Dec 03 2017 20:11:16 GMT+0300 (+03)
+=======================================================
+
+ - Fix tests
+    
+    Two tests skipped because breaking passing react context in enzyme@3.2.0 (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Sun Dec 3 16:28:58 2017 +0300)
+ - React 16.x.x support (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Sun Dec 3 14:29:21 2017 +0300)
+ - Update README.md [skip ci] (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Fri Nov 17 13:26:52 2017 +0300)
+ - Update I18nContext.DOCUMENTATION.md (Alexey Sergeev <asergeev-sc@users.noreply.github.com>, Thu Aug 31 22:46:04 2017 +0300)
+ - '@opuscapita/opuscapita-ui' was renamed to '@opuscapita/styles' -> replacing old packae with new one (Alexey Sergeev <sab@scand.com>, Tue Aug 29 10:43:14 2017 +0300)
+ - Removing lodash usage (Alexey Sergeev <sab@scand.com>, Mon Aug 28 22:30:43 2017 +0300)
+ - Updating CircleCI build process to generate/store correct test reports (Alexey Sergeev <sab@scand.com>, Mon Aug 28 22:21:47 2017 +0300)
+ - Replacing hardcoded css/font/image fileswith @opuscapita/opuscapita-ui package. Removing Jenkins build confiuration files (CircleCI is used instead). (Alexey Sergeev <sab@scand.com>, Mon Aug 28 22:14:48 2017 +0300)
+ - Change README.md (baliunov <baliunov@scand.com>, Fri Jul 21 11:40:20 2017 +0300)
+ - Enabled Coverage (baliunov <baliunov@scand.com>, Fri Jul 21 11:32:16 2017 +0300)
+ - Add Coverage (baliunov <baliunov@scand.com>, Fri Jul 21 11:30:04 2017 +0300)
+ - Change .circleci (baliunov <baliunov@scand.com>, Fri Jul 21 11:23:02 2017 +0300)
+ - Add circleci (baliunov <baliunov@scand.com>, Thu Jul 20 17:43:49 2017 +0300)
+ - Updating to a version to  1.0.9 (Kirill Volkovich <volkovich@scand.com>, Thu Jun 15 13:46:47 2017 +0300)
+
 Release 1.0.8 Thu Jun 15 2017 13:46:36 GMT+0300 (+03)
 =======================================================
 
