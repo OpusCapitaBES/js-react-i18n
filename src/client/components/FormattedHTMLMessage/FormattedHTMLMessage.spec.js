@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { I18nManager } from '@opuscapita/i18n';
 import FormattedHTMLMessage from './FormattedHTMLMessage.react';
@@ -7,11 +8,11 @@ import { render } from 'enzyme';
 class TestComponent extends React.Component {
 
   static propTypes = {
-    message: React.PropTypes.string,
+    message: PropTypes.string,
   };
 
   static childContextTypes = {
-    i18n: React.PropTypes.object.isRequired,
+    i18n: PropTypes.object.isRequired,
   };
 
   getChildContext() {

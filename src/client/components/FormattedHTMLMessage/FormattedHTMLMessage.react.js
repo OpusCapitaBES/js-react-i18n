@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 export default class FormattedHTMLMessage extends React.Component {
   static propTypes = {
-    message: React.PropTypes.string,
+    message: PropTypes.string,
   };
 
   static contextTypes = {
-    i18n: React.PropTypes.object.isRequired,
+    i18n: PropTypes.object.isRequired,
   };
 
   render() {

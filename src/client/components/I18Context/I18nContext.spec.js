@@ -1,7 +1,10 @@
+import 'jsdom-global/register';
+
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/no-multi-comp */
-import 'jsdom-global/register';
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import I18nContext from '.';
 import { I18nManager } from '@opuscapita/i18n';
 import { expect } from 'chai';
