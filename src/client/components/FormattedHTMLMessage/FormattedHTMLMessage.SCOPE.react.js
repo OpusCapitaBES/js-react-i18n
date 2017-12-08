@@ -16,15 +16,16 @@ class FormattedHTMLMessageScope extends Component {
   getChildContext() {
     let i18n = this.context.i18n;
     if (!this.context.i18n) {
-      i18n = new I18nManager('en');
+      i18n = new I18nManager({ locale: 'en' });
     }
 
-    i18n.register('TextComponent', [{
-      locales: ['en'],
-      messages: {
-        logo: 'Here we go',
-      },
-    }]);
+    i18n.register('TextComponent',
+      {
+        'en': {
+          logo: 'Here we go',
+        }
+      }
+    );
 
     return { i18n };
   }

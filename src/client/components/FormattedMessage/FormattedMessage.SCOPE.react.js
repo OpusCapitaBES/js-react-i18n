@@ -1,10 +1,10 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import { showroomScopeDecorator } from '@opuscapita/react-showroom-client';
 import { I18nManager } from '@opuscapita/i18n';
 
 @showroomScopeDecorator
-class FormattedMessageScope extends Component {
+class FormattedMessageScope extends React.Component {
   static contextTypes = {
     i18n: PropTypes.object
   }
@@ -14,18 +14,14 @@ class FormattedMessageScope extends Component {
   }
 
   getChildContext() {
-    let i18n = this.context.i18n;
-    if (!this.context.i18n) {
-      i18n = new I18nManager('en');
-    }
-
-    i18n.register('TextComponent', [{
-      locales: ['en'],
-      messages: {
-        logo: 'Here we go',
-      },
-    }]);
-
+    const i18n = new I18nManager({ locale: 'en' });
+    i18n.register('TextComponent',
+      {
+        'en': {
+          logo: 'Here we go',
+        },
+      }
+    );
     return { i18n };
   }
 
