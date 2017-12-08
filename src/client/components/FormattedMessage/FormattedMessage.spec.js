@@ -16,18 +16,17 @@ class TestComponent extends React.Component {
   };
 
   getChildContext() {
-    const i18n = new I18nManager('en-US');
+    const i18n = new I18nManager({ locale: 'en-US' });
 
-    i18n.register('TextComponent', [{
-      locales: ['en-US'],
-      messages: {
-        logo: 'They shall not pass',
-      },
-    }]);
+    i18n.register('TextComponent',
+      {
+        'en-US': {
+          logo: 'They shall not pass'
+        },
+      }
+    );
 
-    return {
-      i18n,
-    };
+    return { i18n };
   }
 
   render() {
