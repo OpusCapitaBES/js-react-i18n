@@ -1,38 +1,46 @@
+defaults: &defaults
+  docker:
+    - image: opuscapita/minsk-core-ci:grails-2.4.4-jdk-8u131-nodejs-8.9.4-maven-3.3.9-docker
+  working_directory: ~/build
+
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/repo
+    <<: *defaults
     steps:
+      - run:
+          name: Environment inject.
+          command: env_inject.sh
+
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
+            - react-i18n-{{ .Branch }}
+            - react-i18n
 
       - run:
-          name: install-dependencies
+          name: "Installing dependencies."
           command: yarn install
 
       - save_cache:
+          key: react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+              - ./node_modules
+              - ./yarn.lock
 
       - run:
-          name: lint
+          name: "Running lint."
           command: npm run lint
 
       - run:
-          name: test
+          name: "Running tests."
           command: npm test -- --reporter mocha-junit-reporter
           environment:
             MOCHA_FILE: junit/test-results.xml
 
       - run:
-          name: upload-coverage
+          name: "Upload-coverage"
           command: npm run upload-coverage
 
       - store_test_results:
@@ -40,3 +48,85 @@ jobs:
 
       - store_artifacts:
           path: junit
+
+  build_release:
+    <<: *defaults
+    steps:
+      - run:
+          name: Environment inject
+          command: /bin/env_inject.sh
+
+      - checkout
+
+      - restore_cache:
+          keys:
+            - react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
+            - react-i18n-{{ .Branch }}
+            - react-i18n
+
+      - run:
+          name: "Installing dependencies."
+          command: yarn install
+
+      - save_cache:
+          key: react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+              - ./node_modules
+              - ./yarn.lock
+
+      - run:
+          name: "Running lint."
+          command: npm run lint
+
+      - run:
+          name: "Running tests."
+          command: npm test -- --reporter mocha-junit-reporter
+          environment:
+            MOCHA_FILE: junit/test-results.xml
+
+      - run:
+          name: "Upload-coverage"
+          command: npm run upload-coverage
+
+      - store_test_results:
+          path: junit
+
+      - store_artifacts:
+          path: junit
+
+      - run:
+          name: "Deploy."
+          command: npm run publish-release
+
+  release:
+    <<: *defaults
+    steps:
+
+      - run:
+          name: Environment inject
+          command: env_inject.sh
+
+      - checkout
+
+      - run:
+          name: Executing release scrtipt.
+          command: .circleci/release.sh
+
+workflows:
+  version: 2
+  release-and-build:
+    jobs:
+      - release:
+          filters:
+            branches:
+              only: release
+      - build:
+          filters:
+            branches:
+              ignore: release
+      - build_release:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/

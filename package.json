@@ -11,9 +11,8 @@
     "test": "rimraf ./.nyc_output ./coverage && nyc mocha 'src/**/*.spec.js'",
     "start": "nodemon --watch src/server src/server/demo/index",
     "npm-build": "rimraf lib && babel --copy-files --no-babelrc --presets es2015,stage-0,react --plugins transform-decorators-legacy --ignore *.spec.js,*/demo/** src/client --out-dir lib",
-    "npm-publish": "npm run npm-build && npm-publish",
-    "publish-snapshot": "npm run npm-publish",
-    "publish-release": "npm run npm-publish -- --release",
+    "npm-publish": "npm run npm-build && npm publish",
+    "publish-release": "npm run npm-publish",
     "upload-coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "contributors": [
