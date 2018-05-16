@@ -35,7 +35,7 @@ jobs:
 
       - run:
           name: "Running tests."
-          command: npm test -- --reporter mocha-junit-reporter
+          command: npm test
           environment:
             MOCHA_FILE: junit/test-results.xml
 
