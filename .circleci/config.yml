@@ -15,9 +15,9 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
-            - react-i18n-{{ .Branch }}
-            - react-i18n
+            - v1-react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-react-i18n-{{ .Branch }}
+            - v1-react-i18n
 
       - run:
           name: "Installing dependencies."
@@ -60,9 +60,9 @@ jobs:
 
       - restore_cache:
           keys:
-            - react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
-            - react-i18n-{{ .Branch }}
-            - react-i18n
+            - v1-react-i18n-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-react-i18n-{{ .Branch }}
+            - v1-react-i18n
 
       - run:
           name: "Installing dependencies."
