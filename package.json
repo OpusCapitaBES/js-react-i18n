@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "lint": "eslint src",
-    "test": "rimraf ./.nyc_output ./coverage && nyc mocha --reporter=mocha-junit-reporter 'src/**/*.spec.js'",
+    "test": "rimraf ./.nyc_output ./coverage && nyc mocha --reporter=mocha-junit-reporter \"src/**/*.spec.js\"",
     "start": "nodemon --watch src/server src/server/demo/index",
     "npm-build": "rimraf lib && babel --copy-files --no-babelrc --presets es2015,stage-0,react --plugins transform-decorators-legacy --ignore *.spec.js,*/demo/** src/client --out-dir lib",
     "npm-publish": "npm run npm-build && npm publish",
