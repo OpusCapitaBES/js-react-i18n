@@ -16,13 +16,12 @@ Provides possibility to register translations using JSX notation.
 
 ```
 <div>
-  <I18nContext locale='en'>
-    <div><FormattedMessage message="hi"/></div>
-  </I18nContext>
-
-  <I18nContext locale='en'>
-    <RegisterTranslations localeBundles={{'en': {hi: 'Hello'}}}>
-      <div><FormattedMessage message="hi"/></div>
+  <I18nContext locale='en' overriddenTranslations={{test: 'test'}}>
+    <RegisterTranslations localeBundles={{'en': {hi: 'Hello en', test: 'Test en'}}}>
+      <div>
+        <div>hi:<FormattedMessage message="hi"/></div>
+        <div>test:<FormattedMessage message="test"/></div>
+      </div>
     </RegisterTranslations>
   </I18nContext>
 </div>
