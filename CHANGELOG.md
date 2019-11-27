@@ -1,3 +1,21 @@
+
+[Release 2.0.1](https://github.com/OpusCapita/react-i18n/releases/tag/v2.0.1) Wed Nov 27 2019 10:46:00 GMT+0300 (MSK)
+=======================================================
+
+- Updating demo and tests for i18n [skip ci] (Dmitry Divin divin@scand.com, 2019-11-27 10:42:15 +0300)
+- Using docker image opuscapita/minsk-core-ci tag grails-2.4.4-jdk-8u131-nodejs-6.9.4-maven-3.3.9 [ci skip] (Alexey Sergeev alexey.sergeev@opuscapita.com, 2018-09-07 09:08:25 +0300)
+- Using npm instead of yarn in build process (Alexey Sergeev sab@scand.com, 2018-05-16 10:42:53 +0300)
+- Fixed test script to work on Windows. (Egor Stambakio stambakio@scand.com, 2018-05-16 10:33:10 +0300)
+- Changing the way junit test report is configured for test run (Alexey Sergeev sab@scand.com, 2018-05-16 10:24:27 +0300)
+- Switching build process to Node 8 (Alexey Sergeev sab@scand.com, 2018-05-16 10:12:45 +0300)
+- Updating build process: changing cache name (Alexey Sergeev sab@scand.com, 2018-05-16 10:07:38 +0300)
+- Update config.yml (GitHub asergeev-sc@users.noreply.github.com, 2018-05-16 09:57:47 +0300)
+- Adding an issue template file [ci skip] (Egor Stambakio egor.stambakio@opuscapita.com, 2018-05-02 12:26:14 +0300)
+- Updated build config. (Dmitry Shienok dshienok@scand.com, 2018-04-25 12:46:21 +0300)
+- Updated build config. (Dmitry Shienok dshienok@scand.com, 2018-04-25 12:39:01 +0300)
+- Update package.json (GitHub kvolkovich-sc@users.noreply.github.com, 2018-01-31 13:07:54 +0300)
+- Delete CHANGES.txt (GitHub asergeev-sc@users.noreply.github.com, 2018-01-09 09:08:51 +0300)
+- Updating to a version to  2.0.1 (Kirill Volkovich kirill.volkovich@jcatalog.com, 2017-12-08 13:31:22 +0300)
 ## [v2.0.0](https://github.com/OpusCapitaBES/js-react-i18n/compare/v1.0.9...v2.0.0) (Fri, 08 Dec 2017 10:31:11 GMT)
  - Merge pull request #3 from OpusCapita/issue/2
     
