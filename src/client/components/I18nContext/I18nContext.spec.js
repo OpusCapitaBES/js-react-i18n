@@ -90,6 +90,25 @@ describe('I18nContext', () => {
 
       expect(element.html().includes('Willkomm')).to.be.ok;
     });
+
+    it('`overriddenTranslations`', () => {
+      const bundle = {
+        'en': {
+          hi: 'Hello',
+        }
+      };
+      let element = mount(
+        <I18nContext locale='de' overriddenTranslations={{ hi: 'Willkomm' }}>
+          <RegisterTranslations componentName="test" bundle={bundle}>
+            <FormattedMessage message='hi'/>
+          </RegisterTranslations>
+        </I18nContext>
+      );
+
+      expect(element.html().includes('Willkomm')).to.be.ok;
+      element.setProps({ locale: 'en' });
+      expect(element.html().includes('Willkomm')).to.be.ok;
+    })
   });
 
   describe('render', () => {

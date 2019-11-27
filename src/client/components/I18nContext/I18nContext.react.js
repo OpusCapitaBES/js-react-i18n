@@ -13,6 +13,10 @@ class I18nContext extends React.Component {
     return { i18n: this.i18n };
   }
 
+  componentDidUpdate(prevProps) {
+    this.initManager(this.props);
+  }
+
   initManager(props) {
     this.i18n = new I18nManager(props);
   }
@@ -31,7 +35,8 @@ I18nContext.childContextTypes = {
 I18nContext.propTypes = {
   locale: PropTypes.string,
   localeFormattingInfo: PropTypes.object,
-  fallbackLocale: PropTypes.string
+  fallbackLocale: PropTypes.string,
+  overriddenTranslations: PropTypes.object,
 };
 I18nContext.defaultProps = {
   locale: defaultProps.locale,
