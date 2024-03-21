@@ -78,7 +78,7 @@
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
-    "webpack-dev-middleware": "1.9.0"
+    "webpack-dev-middleware": "5.3.4"
   },
   "nyc": {
     "sourceMap": false,
